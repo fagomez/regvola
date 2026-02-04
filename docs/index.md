@@ -1,95 +1,86 @@
-# 🧠 Multidimensional Periodization of Internal Armed Conflict
+# regvola
 
-![Workflow](assets/figures/MasterTimeLine.png)
+# The Fog of War: Detecting Structural Regimes of Volatility in Long-Term Conflict Data
 
- Colors indicate statistically homogeneous regimes detected by the NB-GLM model for different violence indicators.
+![Workflow](../assets/workflow.png)
 
-## 🔍 Project Overview
-
-This project introduces a **computational framework for the periodization of internal armed conflicts**, based on a **Negative Binomial Generalized Linear Model (NB-GLM)** combined with **change-point detection**.
-
-The method is designed to capture:
-
-- 📈 Escalation and de-escalation dynamics  
-- 📊 Overdispersed violence counts  
-- 🧩 Multiple dimensions of violence  
-- 🌍 Population-adjusted risk  
-- ⏳ Structural regime changes over time  
-
-The approach is illustrated using **monthly data from the Colombian internal armed conflict (1958–2021)**.
+This project proposes a methodological framework to detect **structural regimes of uncertainty**
+in long-term internal armed conflict data. Rather than periodizing conflicts solely by changes
+in violence intensity, the approach focuses on the **volatility of violence**, understood as the
+temporal unpredictability of violent events.
 
 ---
 
-## 🧩 Why this matters
+## Project overview
 
-Traditional conflict periodization often relies on:
+**regvola** (regimes of volatility analysis) implements a dual-path decomposition framework
+that separates the dynamics of violence into two complementary components:
 
-- arbitrary temporal divisions,
-- visual inspection,
-- or models assuming constant variance.
+- **Intensity of violence**: long-term deterministic trends reflecting escalation and de-escalation.
+- **Uncertainty of violence**: stochastic volatility capturing short-term instability and tactical shocks.
 
-However, **internal armed conflicts violate these assumptions** due to:
-- extreme heterogeneity,
-- clustering of events,
-- demographic effects,
-- changing targeting strategies.
-
-This project proposes a **statistically coherent alternative**, explicitly modeling:
-
-✔ Overdispersion  
-✔ Temporal trends  
-✔ Population scaling  
-✔ Multidimensional violence dynamics  
+By isolating the innovation process of violence time series, the method identifies periods
+during which the stochastic structure of violence remains stable and detects transitions
+between qualitatively distinct volatility regimes.
 
 ---
 
-## 🧠 Methodological Framework
+## Motivation
 
-The project identifies structural regimes in internal armed conflict using a statistical change-point approach.
+Most empirical approaches to conflict periodization rely on changes in aggregate levels
+of violence. However, variations in intensity often mix strategic trends with tactical noise,
+obscuring important qualitative differences in conflict dynamics.
 
-### 🔹 Multidimensional representation
-Violence is analyzed across three dimensions:
-- **Intensity vs. risk** (absolute vs population-adjusted)
-- **Logic of violence** (selective vs indiscriminate)
-- **Human impact** (events vs victims)
-
----
-
-### 🔹 Distributional assessment
-Violence data are tested using:
-- Weighted KS tests  
-- Kernel-based segmentation  
-
-➡️ Results show strong **overdispersion**, rejecting Poisson and Gaussian models.
+This project addresses this limitation by explicitly modeling the **stochastic component**
+of violence. Changes in volatility can signal transformations in coordination, control,
+and tactical behavior, even when average levels of violence remain stable.
 
 ---
 
-### 🔹 Change-point model
-A **Negative Binomial GLM** is used to:
-- Model overdispersed counts  
-- Capture escalation/de-escalation trends  
-- Incorporate population effects  
+## Methodological framework
 
-The model detects **structural regime changes**.
+### Dual-path decomposition
+
+**Path A — Intensity (trend analysis)**  
+- Variance-stabilizing square-root transformation of monthly event counts  
+- STL decomposition to extract long-term trends  
+- Change-point detection on the trend to identify historical intensity phases  
+
+**Path B — Uncertainty (volatility analysis)**  
+- SARIMA filtering to remove deterministic temporal dependence  
+- Extraction of innovation residuals  
+- Change-point detection (PELT) on residual volatility  
+
+### Regime classification
+
+The results from both paths are combined to classify the evolution of the conflict into
+states such as:
+
+- High intensity / low uncertainty  
+- High intensity / high uncertainty  
+- Low intensity / high uncertainty (fragmented violence)  
+- Low intensity / low uncertainty  
+
+This joint classification reveals dynamics that are invisible to trend-based analyses alone.
 
 ---
 
-### 🔹 Multidimensional periodization
-Each indicator produces its own segmentation, revealing that:
+## Example results
 
-- Conflict phases differ across dimensions  
-- Regimes do not fully align  
-- Violence dynamics depend on how violence is measured
+![Regimes](../assets/regimes.png)
 
-## 📊 Example Results
-
-### Multidimensional regime structure
-![Regimes](assets/figures/result1.png)
-![Regimes](assets/figures/result2.png)
-
-The GLM–NB model locates regime changes **closer to empirical violence peaks**, reducing segmentation error and improving interpretability.
+(Replace these figures with outputs generated from the analysis notebooks.)
 
 ---
+
+## Repository
+
+The full code and data used in this project are available at:
+
+https://github.com/fagomez/regvola
+
+Repository structure:
+
 
 ## 📁 Repository Structure
 
@@ -114,14 +105,14 @@ nbglm/
 
 This work is currently **under review at PLOS ONE**.
 
-If you wish to cite this work while it is under review, please use the following reference:
+If you wish to cite this work while it is under review, please use:
 
 <pre> 
-@unpublished{Gomez2026NBGLM,
-  title   = {A Negative Binomial GLM Change-Point Model for Multidimensional Conflict Periodization},
-  author  = {Castro, Cristiam and G{\'o}mez, Francisco},
+@unpublished{Gomez2026VOLA,
+  title   = {The Fog of War: Detecting Structural Regimes of Volatility in Long-Term Conflict Data},
+  author  = {G{\'o}mez, Francisco and Hern{\'a}ndez-Romero, Freddy},
   year    = {2026},
-  note    = {Manuscript under review at PLOS ONE}
+  note    = {Manuscript under review}
 }
 </pre>
 
