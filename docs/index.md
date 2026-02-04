@@ -39,6 +39,7 @@ and tactical behavior, even when average levels of violence remain stable.
 
 ## Methodological framework
 
+
 ### Dual-path decomposition
 
 **Path A — Intensity (trend analysis)**  
