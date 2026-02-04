@@ -2,7 +2,7 @@
 
 # The Fog of War: Detecting Structural Regimes of Volatility in Long-Term Conflict Data
 
-![Workflow](../assets/workflow.png)
+![Workflow](../assets/figueres/results1.png)
 
 This project proposes a methodological framework to detect **structural regimes of uncertainty**
 in long-term internal armed conflict data. Rather than periodizing conflicts solely by changes
@@ -63,14 +63,6 @@ states such as:
 - Low intensity / low uncertainty  
 
 This joint classification reveals dynamics that are invisible to trend-based analyses alone.
-
----
-
-## Example results
-
-![Regimes](../assets/regimes.png)
-
-(Replace these figures with outputs generated from the analysis notebooks.)
 
 ---
 

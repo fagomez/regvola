@@ -57,7 +57,7 @@ data/monthlyViolenceColombia.xlsx
 
 ## 📄 Citation
 
-This work is currently **under review at PLOS ONE**.
+This work is currently **under review at Journal of Peace Research**.
 
 If you wish to cite this work while it is under review, please use the following reference:
 
