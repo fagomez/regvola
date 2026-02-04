@@ -1,6 +1,6 @@
 # regvola
 
-# The Fog of War: Detecting Structural Regimes of Volatility in Long-Term Conflict Data
+# The Fog o-f War: Detecting Structural Regimes of Volatility in Long-Term Conflict Data
 
 ![Workflow](../assets/figures/results1.png)
 
