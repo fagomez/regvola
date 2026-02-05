@@ -54,15 +54,7 @@ and tactical behavior, even when average levels of violence remain stable.
 
 ### Regime classification
 
-The results from both paths are combined to classify the evolution of the conflict into
-states such as:
-
-- High intensity / low uncertainty  
-- High intensity / high uncertainty  
-- Low intensity / high uncertainty (fragmented violence)  
-- Low intensity / low uncertainty  
-
-This joint classification reveals dynamics that are invisible to trend-based analyses alone.
+Joint interpretation of intensity regimes and volatility regimes to characterize conflict dynamics.
 
 ---
 
@@ -78,7 +70,7 @@ Repository structure:
 ## 📁 Repository Structure
 
 The source code and the data is available at:  
-[GitHub repository](https://github.com/fagomez/regvola)
+[GitHub repository](https://github.com/fagomez/regvola/)
 
 The project is organized as follows:
 

@@ -62,7 +62,7 @@ This work is currently **under review at Journal of Peace Research**.
 If you wish to cite this work while it is under review, please use the following reference:
 
 <pre>
-@unpublished{Gomez2026NBGLM,
+@unpublished{Gomez2026VOLA,
   title   = {The Fog of War: Detecting Structural Regimes of Volatility in Long-Term Conflict Data},
   author  = {G{\'o}mez, Francisco and Hern{\'a}ndez-Romero, Freddy},
   year    = {2026},
