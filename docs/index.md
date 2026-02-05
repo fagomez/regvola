@@ -78,7 +78,7 @@ Repository structure:
 ## 📁 Repository Structure
 
 The source code and the data is available at:  
-[GitHub repository](https://github.com/fagomez/nbglm)
+[GitHub repository](https://github.com/fagomez/regvola)
 
 The project is organized as follows:
 
