@@ -96,7 +96,7 @@ nbglm/
 	
 ## 📄 Citation
 
-This work is currently **under review at PLOS ONE**.
+This work is currently **under review**.
 
 If you wish to cite this work while it is under review, please use:
 
